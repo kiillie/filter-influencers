@@ -1,0 +1,124 @@
+.form-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 0;
+    background: #333;
+    height: 100%;
+    width: 100%;
+}
+.form-cont {
+    margin: 0 auto;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px #232323;
+	.nav-tabs {
+		li {
+			width: 50%;
+			text-align: center;
+			&.active a {
+				position: relative;
+			    background: $light_green;
+			    color: #fff;
+			    border: none;
+			    &:before {
+		    	    left: 50%;
+				    border: solid transparent;
+				    content: " ";
+				    height: 0;
+				    width: 0;
+				    position: absolute;
+				    pointer-events: none;
+				    border-color: rgba(255, 255, 255, 0);
+				    border-bottom-color: #fff;
+				    border-width: 10px;
+				    margin-left: -10px;
+				    bottom: 0;
+			    }
+			}
+			a {
+				margin: 0;
+				color: #fff;
+				background: $dark_gray;
+				border: none;
+				border-radius: 0;
+			}
+		}
+	}
+	.tab-content {
+		margin: 0 auto;
+		padding: 30px 0;
+		max-width: 400px;
+	}
+	.in-group {
+		margin-bottom: 20px;
+		padding: 10px 0;
+		border-bottom: 1px solid $gray;
+		.fa {
+		    float: left;
+		    width: 50px;
+		    font-size: 3rem;
+		    text-align: center;
+		    color: #bbb;
+		}
+		input {
+		    float: left;
+		    width: 85%;
+		    border: none;
+		    box-shadow: 0 0;
+		    font-size: 1.8rem;
+		    letter-spacing: 0.075rem;
+    		&:focus {
+    			border: none;
+    		}
+		}
+		&:after {
+		    content: "";
+		    display: block;
+		    clear: both;
+		}
+	}
+}
+.social-login {
+	a {
+	    display: block;
+	    margin-bottom: 20px;
+	    padding: 12px 18px;
+	    background: #3b5998;
+	    font-size: 1.8rem;
+	    color: #fff;
+	    .fa {
+		    position: relative;
+		    top: 2px;
+    		margin-right: 20px;
+    		width: 20px;
+    		height: 20px;
+    	    font-size: 2.4rem;
+	    }
+	    &.btn-twitter {
+	    	background: #45c2fa;
+	    }
+	    &:hover {
+	    	opacity: 0.8;
+	    	text-decoration: none;
+	    }
+	}
+}
+.or {
+    margin: 35px auto 30px;
+    display: block;
+}
+.btn-send {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.075rem;
+    margin-top: 30px;
+    border: none;
+    &:hover {
+    	opacity: 0.8;
+    	background: $light_green;
+    }
+}
