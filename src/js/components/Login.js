@@ -22,9 +22,9 @@ export default class Index extends React.Component{
 		e.preventDefault();
 		console.log(this.state);
 		this.serverRequest = $.post("http://localhost:8081/login", this.state, function(data){
-			console.log(data);
 			if(data.message == "logged"){
-				window.location.href = "#/search"
+				var user = JSON.parse(data.cred);
+				window.location.href = "#/search/" + user.id;
 			}
 		});
 	}

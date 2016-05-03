@@ -1,23 +1,26 @@
 import React from 'react';
 import $ from 'jquery';
+import Cookie from 'react-cookie';
 
 export default class Search extends React.Component{
 	constructor(){
 		super();
 		this.state = {
 			influencers_url: 'http://localhost:8081/influencers',
-			influencers: {}
+			influencers: []
 		}
 	}
 	componentDidMount(){
-		this.serverRequest = $.get(this.state.influencers_url, function(result){
-			console.log(result);
+		var marketer = this.props.params.id;
+		console.log(this.state.influencers_url + "/" + marketer);
+		this.serverRequest = $.get(this.state.influencers_url + "/" + marketer, function(result){
 			this.setState({
-				influencers: result
+				influencers: result.influencers
 			});
 		}.bind(this));
 	}
 	render(){
+		//console.log(this.state.influencers);
 		return(
 		<div class="wrap">
 			<div class="container">
@@ -54,21 +57,25 @@ export default class Search extends React.Component{
 		          </form>
 		          <div class="influenced-wrap">
 		            <div class="row">
-		              <div class="col-xs-6 col-sm-3">
-		                <div class="influenced">
-		                  <div class="i-image">
-		                    <img src="images/github.png" alt="" />
-		                  </div>
-		                  <span class="i-name">Github</span>
-		                  <div class="i-details">
-		                    <span>@github</span>
-		                    <span><i class="fa fa-map"></i> San Fransisco</span>
-		                  </div>
-		                  <div class="i-value">
-		                    <span class="value"><i class="indicator-value high"></i> $25,000</span>
-		                  </div>
-		                </div>
-		              </div>
+		              {this.state.influencers.map(function(influencer){
+		              	return(
+		              		<div class="col-xs-6 col-sm-3">
+				                <div class="influenced">
+				                  <div class="i-image">
+				                    <img src="images/github.png" alt="" />
+				                  </div>
+				                  <span class="i-name">{influencer.first_name} {influencer.last_name}</span>
+				                  <div class="i-details">
+				                    <span>{influencer.email}</span><br/>
+				                    <span><i class="fa fa-map"></i> No. of Influenced: {influencer.no_of_influence}</span>
+				                  </div>
+				                  <div class="i-value">
+				                    <span class="value"><i class="indicator-value high"></i> ${influencer.value}</span>
+				                  </div>
+				                </div>
+				              </div>
+		              	)
+		              })}
 		            </div>
 		          </div>
 	          </div>

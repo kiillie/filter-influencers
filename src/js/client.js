@@ -9,6 +9,6 @@ ReactDOM.render((
 	<Router history={hashHistory}>
 		<Route path="/" component={Login} />
 		<Route path="/dashboard" component={Dashboard} />
-		<Route path="/search" component={Search} />
+		<Route path="/search/:id" component={Search} />
 	</Router>
 ), index);
