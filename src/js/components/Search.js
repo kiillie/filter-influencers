@@ -62,11 +62,11 @@ export default class Search extends React.Component{
 		              		<div class="col-xs-6 col-sm-3">
 				                <div class="influenced">
 				                  <div class="i-image">
-				                    <img src="images/github.png" alt="" />
+				                    <img src={influencer.img_url} alt="" />
 				                  </div>
 				                  <span class="i-name">{influencer.first_name} {influencer.last_name}</span>
 				                  <div class="i-details">
-				                    <span>{influencer.email}</span><br/>
+				                    <span>@{influencer.username}</span><br/>
 				                    <span><i class="fa fa-map"></i> No. of Influenced: {influencer.no_of_influence}</span>
 				                  </div>
 				                  <div class="i-value">
