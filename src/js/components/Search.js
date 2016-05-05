@@ -46,11 +46,11 @@ export default class Search extends React.Component{
 		                </select>
 		              </div>
 		              <div class="col-xs-12 col-md-3">
-		                <select class="form-control">
+		                <select class="form-control" onChange={this.filterChange.bind(this)}>
 		                  <option>Value</option>
-		                  <option>$1000</option>
-		                  <option>$10, 000</option>
-		                  <option>$100, 000</option>
+		                  <option value="1000">$1000</option>
+		                  <option value="10000">$10, 000</option>
+		                  <option value="100000">$100, 000</option>
 		                </select>
 		              </div>
 		            </div>
